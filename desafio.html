@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SEGREDO</title>
+	<meta charset="UTF-8">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f1f1f1;
+		}
+		h1 {
+			color: #555;
+			text-align: center;
+			margin-top: 50px;
+		}
+		#desafio {
+			margin: 50px auto;
+			max-width: 500px;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+		}
+		input[type=text] {
+			padding: 10px;
+			border-radius: 3px;
+			border: 1px solid #ccc;
+			width: 100%;
+			box-sizing: border-box;
+			margin-bottom: 20px;
+			font-size: 16px;
+		}
+		button {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+		button:hover {
+			background-color: #3e8e41;
+		}
+		#mensagem {
+			display: none;
+			margin-top: 20px;
+			padding: 10px;
+			background-color: #f2f2f2;
+			border-radius: 5px;
+		}
+  button {
+  background-color: blue;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+}
+
+	</style>
+</head>
+<body>
+	<h1>SEGREDO</h1>
+	<div id="desafio">
+		<h2>Senha</h2>
+		<p>A segunda palavra do titulo do nosso segundo serviço:</p>
+		<input type="text" id="senha" placeholder="Digite a senha aqui...">
+		<button type="button" onclick="verificarSenha()">Verificar Senha</button>
+		<div id="mensagem"></div>
+	</div>
+	<script>
+		function verificarSenha() {
+			var senha = document.getElementById("senha").value;
+			if (senha == "Magic") {
+				document.getElementById("mensagem").innerHTML = "<p>Parabéns, você digitou a senha correta!</p><p>Agora você pode descobrir o verdadeiro segredo!</p><button type='button' onclick='window.location.href = \"jogo.html\"'>Descobrir Segredo</button>";
+				document.getElementById("mensagem").style.display = "block";
+			} else {
+				document.getElementById("mensagem").innerHTML = "<p>A senha digitada está incorreta. Tente novamente.</p>";
+				document.getElementById("mensagem").style.display = "block";
+			}
+		}
+	</script>
+</body>
+<button onclick="window.location.href='kaue.html'">Voltar</button>
+</html>

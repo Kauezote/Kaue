@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>O Segredo do Universo</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			background-color: #333333;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #808080;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+		}
+
+		h1 {
+			margin-top: 0;
+			text-align: center;
+			color: #444;
+		}
+
+		p {
+			font-size: 18px;
+			line-height: 1.5;
+			color: #666;
+		}
+
+		.button {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #4caf50;
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+			text-decoration: none;
+			border-radius: 5px;
+			transition: background-color 0.3s ease;
+		}
+
+		.button:hover {
+			background-color: #357a38;
+		}
+
+		.secret {
+			display: none;
+			margin-top: 20px;
+			padding: 20px;
+			background-color: #d3d3d3;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+		}
+
+		.secret h2 {
+			margin-top: 0;
+			font-size: 24px;
+			color: #444;
+		}
+
+		.secret p {
+			margin-bottom: 10px;
+		}
+
+		.secret img {
+			max-width: 100%;
+			margin-bottom: 10px;
+		}
+
+		.secret .close {
+			display: block;
+			margin-top: 20px;
+			padding: 10px 20px;
+			background-color: #e74c3c;
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+			text-align: center;
+			text-decoration: none;
+			border-radius: 5px;
+			transition: background-color 0.3s ease;
+		}
+
+		.secret .close:hover {
+			background-color: #c0392b;
+		}
+  button {
+  background-color: blue;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>O Segredo do Universo</h1>
+		<p>Você está prestes a descobrir o segredo mais bem guardado do universo. Mas antes, preciso que você faça algo para mim. Clique no botão abaixo para provar que você é humano.</p>
+		<a href="#" class="button" onclick="showSecret()">Eu sou humano</a>
+		<div class="secret" id="secret">
+			<h2>O Segredo do Universo</h2>
+			<p>O segredo do universo é que tudo está conectado. Cada estrela, planeta, galáxia e ser vivo está interligado em uma teia de energia que conecta 		os mistérios do cosmos. Esta energia é o que impulsiona o universo e mantém tudo em equilíbrio.</p>
+		<img src="Segredo.jpg" alt="Universo">
+		<p>Este é apenas um dos segredos do universo. Existem muitos outros esperando para serem descobertos. Se você quiser saber mais, mantenha-se curioso e continue explorando este maravilhoso universo que nos cerca, e continue acompanhando o kaue, o maior segredo dessa galaxia.</p>
+		<a href="#" class="close" onclick="hideSecret()">Fechar</a><button onclick="window.location.href='parabens.html'">Voltar</button>
+	</div>
+</div>
+
+<script>
+	function showSecret() {
+		document.getElementById("secret").style.display = "block";
+	}
+
+	function hideSecret() {
+		document.getElementById("secret").style.display = "none";
+	}
+</script>
+</body>
+</html>

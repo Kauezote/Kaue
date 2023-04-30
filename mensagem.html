@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Obrigado!</title>
+    <style>
+      body {
+        background-color: #4682b4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      h1 {
+        font-family: "Segoe UI", sans-serif;
+        font-size: 3em;
+        text-transform: uppercase;
+        animation: jump 0.5s ease-in-out infinite;
+      }
+      @keyframes jump {
+        0% {
+          transform: translateY(0);
+          color: #ff5722;
+        }
+        25% {
+          transform: translateY(-50px);
+          color: #e91e63;
+        }
+        50% {
+          transform: translateY(0);
+          color: #9c27b0;
+        }
+        75% {
+          transform: translateY(-50px);
+          color: #2196f3;
+        }
+        100% {
+          transform: translateY(0);
+          color: #4caf50;
+        }
+      }
+      .hidden {
+        display: none;
+      }
+    button {
+  background-color: #4682b4;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="content" class="hidden">
+      <h1>PARABENS!!!!</h1>
+      <h1>Mas o segredo ainda é um mistério.</h1>
+      <h1>🥳</h1><button onclick="window.location.href='simnao.html'">.
+    </div>
+    <div id="password-container">
+      <label for="password">Digite a senha:</label>
+      <input type="password" id="password">
+      <button id="submit-button">Enviar</button>
+      <p id="error-message" class="hidden">Senha incorreta. Tente novamente.</p>
+    </div>
+    <script>
+      const passwordInput = document.getElementById("password")
+      const submitButton = document.getElementById("submit-button");
+      const errorMessage = document.getElementById("error-message");
+      const contentDiv = document.getElementById("content");
+      const passwordContainerDiv = document.getElementById("password-container");
+
+      submitButton.addEventListener("click", function() {
+        const password = passwordInput.value;
+        if (password === "mente") {
+          contentDiv.classList.remove("hidden");
+          passwordInput.value = "";
+          passwordContainerDiv.classList.add("hidden");
+        } else {
+          errorMessage.classList.remove("hidden");
+        }
+      });
+    </script>
+  </body>
+<button onclick="window.location.href='kaue.html'">Voltar</button>
+</html>

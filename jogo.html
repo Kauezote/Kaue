@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Adivinhe o número</title>
+	<style>
+		body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: #333;
+  font-size: 3em;
+  margin-top: 50px;
+  text-shadow: 2px 2px #ddd;
+}
+
+p {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+
+input {
+  font-size: 1.2em;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #555;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+button {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #555;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  text-shadow: 1px 1px #333;
+}
+
+button:hover {
+  background-color: #777;
+}
+
+#result {
+  font-size: 1.5em;
+  margin-top: 30px;
+  text-shadow: 1px 1px #ddd;
+}
+
+	</style>
+</head>
+<body>
+  <h1>Mas antes</h1>
+ <h1>Adivinhe o número</h1>
+	<p>Estou pensando em um número entre 1 e 10. Você tem 3 chances para adivinhar.</p>
+	<input type="number" id="guess" min="1" max="10">
+	<button onclick="guessNumber()">Adivinhar</button>
+	<p id="result"></p>
+
+	<script>
+		let randomNumber = Math.floor(Math.random() * 10) + 1;
+		let triesLeft = 3;
+
+		function guessNumber() {
+			const guess = parseInt(document.getElementById("guess").value);
+
+			if (guess < 1 || guess > 10) {
+				alert("Por favor, escolha um número entre 1 e 10.");
+				return;
+			}
+
+			if (guess == randomNumber) {
+				document.getElementById("result").innerHTML = "Parabéns, você acertou o número!";
+				disableInputAndButton();
+
+				window.location.href = "andando.html";
+			} else {
+				triesLeft--;
+				if (triesLeft > 0) {
+					document.getElementById("result").innerHTML = `Que pena, você errou. Você ainda tem ${triesLeft} tentativa(s).`;
+
+					if (guess > randomNumber) {
+						alert("O número é menor.");
+					} else {
+						alert("O número é maior.");
+					}
+				} else {
+					document.getElementById("result").innerHTML = "Suas tentativas acabaram, você perdeu!";
+					disableInputAndButton();
+				}
+			}
+		}
+
+		function disableInputAndButton() {
+			document.getElementById("guess").disabled = true;
+			document.getElementsByTagName("button")[0].disabled = true;
+		}
+	</script>
+</body>
+<button onclick="window.location.href='kaue.html'">Voltar</button>
+</html>

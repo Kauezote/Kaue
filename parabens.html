@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Vidro Quebrando</title>
+	<style>
+		body {
+			background-color: #333;
+		}
+
+		#glass {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 200px;
+			height: 200px;
+			background-image: url('vidro1.png');
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		.crack {
+			position: absolute;
+			background-image: url('vidro2.png');
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+			animation: crack 0.2s linear forwards;
+		}
+
+		@keyframes crack {
+			0% {
+				width: 0px;
+				height: 0px;
+				opacity: 0;
+			}
+			100% {
+				width: 200px;
+				height: 200px;
+				opacity: 1;
+			}
+		}
+
+		.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  color: black;
+  text-align: center;
+  display: none;
+  text-shadow: 2px 2px 2px white;
+  font-weight: bold;
+}
+
+  .botao-sair {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  animation: piscar 1s infinite;
+}
+
+@keyframes piscar {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+	</style>
+</head>
+<body>
+	<div id="glass"></div>
+	<div class="message">Parabéns por descobrir tudo!</div>
+	<script>
+		const glass = document.querySelector('#glass');
+		const message = document.querySelector('.message');
+
+		glass.addEventListener('click', () => {
+			for (let i = 0; i < 10; i++) {
+				const x = Math.floor(Math.random() * 200) - 100;
+				const y = Math.floor(Math.random() * 200) - 100;
+				const crack = document.createElement('div');
+				crack.classList.add('crack');
+				crack.style.top = `${y}px`;
+				crack.style.left = `${x}px`;
+				glass.appendChild(crack);
+			}
+			message.style.display = 'block';
+		});
+	</script>
+</body>
+<button class="botao-sair"onclick="window.location.href='kaue.html'">Sair</button>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Ainda quer saber sobre o segredo?</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 24px;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    button {
+      background-color: white;
+      color: black;
+      font-size: 18px;
+      border: 2px solid black;
+      padding: 10px;
+      margin: 20px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: black;
+      color: white;
+      transition: all 0.5s;
+    }
+
+    #title {
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="title">Ainda quer saber sobre o segredo?</div>
+  <button id="yes">Sim</button>
+  <button id="no">Não</button>
+
+  <script>
+    var yesButton = document.getElementById('yes');
+    var noButton = document.getElementById('no');
+
+    yesButton.addEventListener('click', function() {
+      window.location.href = 'desafio.html';
+    });
+
+    noButton.addEventListener('click', function() {
+      window.location.href = 'kaue.html';
+    });
+
+    // Efeito de suspense piscando em preto e branco
+    setInterval(function() {
+      var body = document.getElementsByTagName('body')[0];
+      body.style.backgroundColor = body.style.backgroundColor === 'black' ? 'white' : 'black';
+      body.style.color = body.style.color === 'white' ? 'black' : 'white';
+    }, 500);
+  </script>
+</body>
+</html>

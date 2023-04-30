@@ -1,0 +1,188 @@
+/* Estilos gerais */
+
+body {
+  font-family: Montserrat;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  background-color: #89CFF0;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+  font-size: 30px
+}
+
+ul {
+  list-style: none;
+}
+
+/* Estilos do cabeçalho */
+
+header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  font-size: 16px;
+}
+
+/* Estilos da seção Sobre */
+
+section#sobre {
+  padding: 50px;
+  text-align: center;
+}
+
+section#sobre h1 {
+  font-size: 43px;
+  font-family: Montserrat;
+  color: darkblue;
+  text-shadow: 2px 2px white
+}
+
+section#sobre p {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+section#sobre img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+/* Estilos da seção Serviços */
+
+section#servicos {
+  background-color: #f8f8f8;
+  padding: 50px;
+}
+
+section#servicos h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+section#servicos li {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+section#servicos img {
+  max-width: 200px;
+  border-radius: 10%;
+  margin-bottom: 10px;
+}
+
+/* Estilos da seção Depoimentos */
+
+section#depoimentos {
+  padding: 50px;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+section#depoimentos h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.depoimento {
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+.depoimento img {
+  max-width: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.depoimento p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.depoimento cite {
+  font-size: 16px;
+}
+
+/* Estilos da seção Contato */
+
+section#contato {
+  padding: 50px;
+  text-align: center;
+  background-color: #08aa92;
+}
+
+section#contato h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0060c0;
+}
+
+button[onclick="window.location.href='lojinha.html'"] {
+  background-color: #191970;
+  color: gray;
+  padding: 10px 159px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Estilos do rodapé */
+footer {
+  background-color: #333;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}

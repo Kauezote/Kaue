@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Puzzle</title>
+	<style>
+		#puzzle {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(4, 1fr);
+			width: 400px;
+			height: 400px;
+			margin: auto;
+			background-color: gray;
+		  border: 2px solid black; 
+		}
+		.piece {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: #87ceeb;
+			border: 1px solid black;
+			font-size: 50px;
+			cursor: pointer;
+			transition: transform 0.2s;
+		}
+		.piece:hover {
+			transform: scale(1.05);
+		}
+  button {
+  background-color: blue;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+}
+
+	</style>
+</head>
+<body>
+	<div id="puzzle">
+		<div class="piece" data-position="1">1</div>
+		<div class="piece" data-position="2">2</div>
+		<div class="piece" data-position="3">3</div>
+		<div class="piece" data-position="4">4</div>
+		<div class="piece" data-position="5">5</div>
+		<div class="piece" data-position="6">6</div>
+		<div class="piece" data-position="7">7</div>
+		<div class="piece" data-position="8">8</div>
+		<div class="piece" data-position="9">9</div>
+		<div class="piece" data-position="10">10</div>
+		<div class="piece" data-position="11">11</div>
+		<div class="piece" data-position="12">12</div>
+		<div class="piece" data-position="13">13</div>
+		<div class="piece" data-position="14">14</div>
+		<div class="piece" data-position="15">15</div>
+		<div class="piece" data-position="16"></div>
+	</div>
+	<p id="message"></p>
+	<script>
+		const puzzle = document.getElementById("puzzle");
+		const pieces = document.querySelectorAll(".piece");
+		const message = document.getElementById("message");
+		let emptyPosition = 16;
+
+		pieces.forEach(piece => {
+			piece.addEventListener("click", () => {
+				const currentPosition = Number(piece.dataset.position);
+				const row = Math.ceil(currentPosition / 4);
+				const col = currentPosition % 4 || 4;
+				const emptyRow = Math.ceil(emptyPosition / 4);
+				const emptyCol = emptyPosition % 4 || 4;
+				const rowDifference = Math.abs(row - emptyRow);
+				const colDifference = Math.abs(col - emptyCol);
+				if ((rowDifference === 1 && colDifference === 0) || (rowDifference === 0 && colDifference === 1)) {
+					const translateX = (col - emptyCol) * 100;
+					const translateY = (row - emptyRow) * 100;
+					piece.style.transform = `translate(${translateX}%, ${translateY}%)`;
+					piece.dataset.position = emptyPosition;
+					emptyPosition = currentPosition;
+					if (isSolved()) {
+						message.innerHTML = "Senha = última palavra da bio.. Agora entre em contato conosco!";
+					}
+				}
+			});
+		});
+
+				function isSolved() {
+			const currentPositions = [];
+			pieces.forEach(piece => currentPositions.push(Number(piece.dataset.position)));
+			for (let i = 0; i < currentPositions.length - 1; i++) {
+				if (currentPositions[i] > currentPositions[i + 1]) {
+					return false;
+				}
+			}
+			return true;
+		}
+	</script>
+</body>
+<button onclick="window.location.href='kaue.html'">Voltar</button>
+</html>

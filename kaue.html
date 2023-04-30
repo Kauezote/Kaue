@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Site do Kaue</title>
+  <style>
+		@keyframes float {
+			0% {
+				transform: translateY(0);
+			}
+			50% {
+				transform: translateY(-50px);
+			}
+			100% {
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes jump {
+			0% {
+				transform: translateY(0);
+			}
+			50% {
+				transform: translateY(-70px);
+			}
+			100% {
+				transform: translateY(0);
+			}
+		}
+
+		#kaue {
+			position: absolute;
+			top: 70%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			animation: float 3s ease-in-out infinite;
+			color: #FF4500;
+			font-size: 80px;
+		 text-shadow: 2px 2px 0 #000;
+			cursor: pointer;
+			animation-delay: 0.2s;
+			animation-direction: alternate;
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: infinite;
+		}
+  
+
+		#kaue:hover {
+			animation: jump 0.5s ease-in-out infinite;
+			animation-delay: 0;
+			animation-direction: normal;
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: infinite;
+		}
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+  <button onclick="window.location.href='lojinha.html'">Lojinha</button>
+
+
+  <main>
+    <section id="sobre"onclick="window.location.href='kauevini.html'">
+      <h1>Kaue Vinicius</h1>
+      <p>Seja Bem vindo a minha página, me chamo Kaue, sou Programador Junior, tenho como mentor nosso amado ChatGPT, e com certeza mesmo que você não precise de nada, vai se interessar em algo!</p>
+      <img src="kauê.jpg" alt="Foto do Kauê">
+    </section>
+
+    <section id="servicos">
+      <h2>Nossos serviços</h2>
+      <ul>
+        <li>Programação em Phyton, HTML, CSS, JavaScript...</li>
+        <img src="servico1.jpg" alt="Foto do servico1">
+        <li>Montagem de sites simples para fins profissionais, recreativos, etc...</li>
+        <img src="servico2.jpg" alt="Foto do servico2">
+        <li>Criação de jogos simples em códigos Phyton, sem processamento grafico.</li>
+        <img src="servico3.jpg" alt="Foto do servico3">
+        <li>Entre outros...</li>
+      </ul>
+    </section>
+  
+    <section id="depoimentos">
+      <h2>Depoimentos</h2>
+      <div class="depoimento">
+        <img src="foto-cliente1.jpg" alt="Foto do cliente 1">
+        <p>"Alem de ser gente boa, é muito legal o joguinho de 21 que ele fez, o adversario maluco é maluco mesmo hahah."</p>
+        <cite>Josef, Matheus</cite>
+      </div>
+  
+      <div class="depoimento">
+        <img src="foto-cliente2.jpg" alt="Foto do cliente 2">
+        <p>"To pensando em pedir pra ele criar um código pra mim que antecipa os numeros da mega sena, dai a gorjeta vai ser boa."</p>
+        <cite>Noia, Chupa</cite>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Entre em contato</h2>
+      <form action="mensagem.html" method="post">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+    
+  </main>
+
+  <footer>
+    <p>Kaue Vinicius &copy; 2023 - Todos os direitos reservados.</p>
+  </footer>
+
+  <div id="kaue">Kaue</div>
+  <script src="script.js"></script>
+</body>
+
+</html>

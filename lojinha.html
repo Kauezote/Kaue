@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Lojinha do Kaue</title>
+    <style>
+      /* Estilos CSS para a página */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+      }
+
+      header {
+        background-color: #191970;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      nav {
+        background-color: #f8f8f8;
+        color: #000080;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+      }
+
+      nav a {
+        color: #000080;
+        text-decoration: none;
+        margin-right: 20px;
+        transition: all 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #fff;
+        background-color: #000080;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: none;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      h2 {
+        color: #222;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      footer {
+        background-color: #222;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+        margin-top: 50px;
+      }
+
+      .buy-btn {
+        background-color: #4682b4;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .buy-btn:hover {
+        background-color: #008000;
+      }
+    
+button[onclick="window.location.href='segredo.html'"] {
+        background-color: #4682b4;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+button[onclick="window.location.href='segredo.html'"]:hover {
+      background-color: #008000;
+    }
+    
+      /* Estilos para caixa de mensagens */
+      .message-box {
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 5px;
+        display: none;
+      }
+
+      .success {
+        background-color: #d4edda;
+        color: #155724;
+      }
+
+      .error {
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+    button {
+  background-color: blue;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+  animation: piscar 1s infinite;    
+    }
+
+    </style>
+    <script>
+      // Mostra ou esconde as seções de conteúdo conforme o menu selecionado
+      function showSection(sectionId) {
+        const sections = document.querySelectorAll('.container');
+        for (let i = 0; i < sections.length; i++) {
+          sections[i].style.display = 'none';
+        }
+        const section = document.querySelector('#' + sectionId);
+        section.style.display = 'block';
+      }
+
+      // Adiciona evento de clique aos botões de compra
+      function addBuyButtonListeners() {
+        const buyButtons = document.querySelectorAll('.buy-btn');
+        for (let i = 0; i < buyButtons.length; i++) {
+          buyButtons[i].addEventListener('click', handleBuyButtonClick);
+        }
+      }
+
+      // Lida com o clique nos botões de compra
+      function handleBuyButtonClick(event) {
+        const product = event.target.parentNode.textContent.trim().split(' -')[0];
+        const price = event.target.parentNode.textContent.trim().split('R$ ')[1];
+        const successMessage = `Obrigado por sua compra! Você comprou "${product}" por R$ ${price}.`;
+        const errorMessage = 'Ocorreu um erro ao processar sua compra. Tente novamente mais tarde.';
+        const status = Math.floor(Math.random() * 2); // 0 para falha, 1 para sucesso
+        const messageBox = document.querySelector('.message-box');
+
+        // Mostra a mensagem de sucesso ou erro de acordo com o status aleatório
+        if (status === 1) {
+          messageBox.textContent = successMessage;
+          messageBox.classList.remove('error');
+          messageBox.classList.add('success');
+        } else {
+          messageBox.textContent = errorMessage;
+          messageBox.classList.remove('success');
+          messageBox.classList.add('error');
+        }
+        messageBox.style.display = 'block';
+
+        // Esconde a mensagem após 3 segundos
+        setTimeout(function() {
+          messageBox.style.display = 'none';
+        }, 3000);
+      }
+
+      // Inicia a página
+      document.addEventListener('DOMContentLoaded', function() {
+        showSection('home');
+        addBuyButtonListeners();
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>$ Lojinha do Kaue $</h1>
+      
+    </header>
+    <nav>
+      <a href="#" onclick="showSection('home')">Home</a>
+      <a href="#" onclick="showSection('produtos')">Produtos</a>
+      <a href="#" onclick="showSection('contato')">Contato</a>
+      <a href="#" onclick="showSection('sobre-nos')">Sobre Nós</a>
+    </nav>
+    <div id="home" class="container" style="display:block">
+      <h2>Bem-vindo à Lojinha do Kaue</h2>
+      <p>Se você chegou até aqui, com certeza precisa de nossos produtos!</p>
+    </div>
+    <div id="produtos" class="container">
+      <h2>Nossos produtos</h2>
+      <ul>
+        <li>Jogos em formato phyton no seu estilo - R$70,00<button class="buy-btn">Comprar</button></li>
+        <li>Site simples com seu tema - R$ 50,00<button class="buy-btn">Comprar</button></li>
+        <li>Pagina HTML estilizada - R$ 30,00<button class="buy-btn">Comprar</button></li>
+        <li>Marketing Digital - R$ 60,00<button onclick="window.location.href='segredo.html'">Segredo</button></li>
+        <li>Revisão de script - R$ 25,00<button class="buy-btn">Comprar</button></li>
+        <li>Edição de video - R$ 40,00<button class="buy-btn">Comprar</button></li>
+        <li>Edição em fotos(até 10 fotos) - R$ 35,00<button class="buy-btn">Comprar</button></li>
+      </ul>
+      <div class="message-box success"></div>
+      <div class="message-box error"></div>
+    </div>
+    <div id="contato" class="container">
+      <h2>Contato</h2>
+      <p>Telefone: 41 987831258</p>
+      <p>Instagram: @Kaue_Vini</p>
+      <p>E-mail: kauevinicios14@gmail.com</p>
+    </div>
+    <div id="sobre-nos" class="container">
+      <h2>Sobre Nós</h2>
+      <p>Loja real e confiável criada por Kaue, 100% confiável, CONFIA!!</p>
+    <button onclick="window.location.href='kaue.html'">Voltar</button>
+    </div>
+    <footer>
+      &copy; Kaue Vinícius, 2023
+    </footer>
+  </body>
+</html>
