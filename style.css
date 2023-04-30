@@ -151,7 +151,7 @@ textarea {
   font-size: 16px;
 }
 
-button[type="submit"] {
+button {
   background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
@@ -161,7 +161,7 @@ button[type="submit"] {
   cursor: pointer;
 }
 
-button[type="submit"]:hover {
+button:hover {
   background-color: #0060c0;
 }
 
