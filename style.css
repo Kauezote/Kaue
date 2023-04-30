@@ -151,7 +151,7 @@ textarea {
   font-size: 16px;
 }
 
-button {
+button[onclick="location.href='mensagem.html'"] {
   background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
@@ -161,7 +161,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+button[onclick="location.href='mensagem.html'"]:hover {
   background-color: #0060c0;
 }
 
